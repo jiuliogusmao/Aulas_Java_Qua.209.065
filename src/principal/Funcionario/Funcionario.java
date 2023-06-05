@@ -15,7 +15,7 @@ class Funcionario {
         if (cargo.equalsIgnoreCase("gerente") && salario < 5000) {
             double bonus = salario * 0.015;
             salario += bonus;
-        } else if (cargo.equalsIgnoreCase("funcionario") && salario < 1500) {
+        } else if (cargo.equalsIgnoreCase("vendedor") && salario < 1500) {
             double bonus = salario * 0.02;
             salario += bonus;
         }
