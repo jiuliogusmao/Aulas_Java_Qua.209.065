@@ -5,7 +5,6 @@ public class Produto {
 	private String descricao;
 	private int quantidade;
 	private double preco;
-	private double valorTotalEstoque;
 
 	public String getDescricao() {
 		return descricao;
@@ -30,29 +29,30 @@ public class Produto {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-
-	public double getValorTotalEstoque() {
-		valorTotalEstoque = quantidade * preco;
-		return valorTotalEstoque;
+	
+	public void adicionarProduto(int quantidade) {
+		this.quantidade += quantidade;
 	}
-
-	public void setValorTotalEstoque(int quantidade, double preco) {
-		this.valorTotalEstoque = quantidade * preco;
+	
+	public void removerProduto(int quantidade) {
+		this.quantidade -= quantidade;
 	}
-
-	public void adicionarProduto(int quantidade, double preco) {
-		valorTotalEstoque = valorTotalEstoque + (quantidade * preco);
+	
+	public double calcularValorTotalEstoque() {
+		return quantidade * preco;
 	}
-
-	public void venderProduto(int quantidade, double preco) {
-		valorTotalEstoque = valorTotalEstoque - (quantidade * preco);
+	
+	public double venderProduto() {
+		double Venda = quantidade * preco;
+		return Venda;
 	}
 
 	@Override
 	public String toString() {
-		return "Produto [descricao = " + descricao + ", quantidade = " + quantidade + ", preco = " + preco
-				+ ", totalEstoque = " + valorTotalEstoque + "]";
-
+		return "Produto [\nDescricao=" + descricao + ", \nQuantidade=" + quantidade + ", \nPreco=" + preco
+				+ ", \nValor total em estoque=" + String.format("%.2f", calcularValorTotalEstoque()) + "]";
 	}
+
+	
 
 }
