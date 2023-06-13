@@ -2,24 +2,34 @@ package entities;
 
 public class Produto {
 
-	private String descricao;
-	private int quantidade;
-	private double preco;
+	private static String descricao;
+	private static int quantidade;
+	private static double preco;
+	
+	public Produto () {
+		
+	}
+	public Produto(String descricao, int quantidade, double preco) {
+		super();
+		Produto.descricao = descricao;
+		Produto.quantidade = quantidade;
+		Produto.preco = preco;
+	}
 
-	public String getDescricao() {
+	public static String getDescricao() {
 		return descricao;
 	}
 
 	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+		Produto.descricao = descricao;
 	}
 
-	public int getQuantidade() {
+	public static int getQuantidade() {
 		return quantidade;
 	}
 
 	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
+		Produto.quantidade = quantidade;
 	}
 
 	public double getPreco() {
@@ -27,15 +37,15 @@ public class Produto {
 	}
 
 	public void setPreco(double preco) {
-		this.preco = preco;
+		Produto.preco = preco;
 	}
 	
 	public void adicionarProduto(int quantidade) {
-		this.quantidade += quantidade;
+		Produto.quantidade += quantidade;
 	}
 	
-	public void removerProduto(int quantidade) {
-		this.quantidade -= quantidade;
+	public static int removerProduto() {
+		return quantidade -= quantidade;
 	}
 	
 	public double calcularValorTotalEstoque() {
