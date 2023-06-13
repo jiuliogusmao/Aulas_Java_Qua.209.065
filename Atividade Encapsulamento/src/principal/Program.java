@@ -62,11 +62,11 @@ public class Program {
 				 sc.nextLine();
 				break;
 			case 3:
-				System.out.println("Encerrando o programa!");
 				break;
 			default:
 				System.out.println("Opção inválida!");
 			}
+			System.out.println("Encerrando o programa!");
 		}
 
 		sc.close();
