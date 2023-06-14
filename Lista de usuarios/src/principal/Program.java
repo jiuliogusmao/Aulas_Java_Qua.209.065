@@ -23,19 +23,20 @@ public class Program {
 			pessoa.setNome(sc.nextLine());
 			System.out.println("Digite sua idade: ");
 			pessoa.setIdade(sc.nextInt());
+			sc.nextLine(); //Limpa o buffer do Scanner
 			System.out.println("Digite seu telefone: ");
 			pessoa.setTelefone(sc.nextLine());
 			
 			pessoas.add(pessoa);
 			
-			System.out.print("Deseja cadastar mais uma pessoa?");
+			System.out.print("Deseja cadastar mais uma pessoa? ");
 			System.out.println("s/n");
 			opcao = sc.next().charAt(0); //Pega um caracter na posição zero
 			sc.nextLine(); //Limpa o buffer do Scanner
 		} while(Character.toLowerCase(opcao) == 's');
 		
 		for (Pessoa p : pessoas) {
-			System.out.println("Lista de usuários: " + p);
+			System.out.println("Lista de usuários: " + p + "\n");
 		}
 		
 		sc.close();
