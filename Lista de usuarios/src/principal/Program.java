@@ -13,17 +13,31 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		sc.useLocale(Locale.ENGLISH);
 		
-		System.out.println("Cadastrar novo usuário");
-		Pessoa pessoa1 = new Pessoa("Zezinho", 20, 99999999);
-		Pessoa pessoa2 = new Pessoa("Luizinho", 20, 88888888);
-		Pessoa pessoa3 = new Pessoa("Uguinho", 20, 7777777);
-		
+		Pessoa pessoa;
 		List<Pessoa> pessoas = new ArrayList<>();
-		pessoas.add(pessoa1);
-		pessoas.add(pessoa2);
-		pessoas.add(pessoa3);
+		char opcao;
+		do {
+			pessoa = new Pessoa();
+			System.out.println("Cadastrar novo usuário");
+			System.out.println("Digite seu nome: ");
+			pessoa.setNome(sc.nextLine());
+			System.out.println("Digite sua idade: ");
+			pessoa.setIdade(sc.nextInt());
+			System.out.println("Digite seu telefone: ");
+			pessoa.setTelefone(sc.nextLine());
+			
+			pessoas.add(pessoa);
+			
+			System.out.print("Deseja cadastar mais uma pessoa?");
+			System.out.println("s/n");
+			opcao = sc.next().charAt(0); //Pega um caracter na posição zero
+			sc.nextLine(); //Limpa o buffer do Scanner
+		} while(Character.toLowerCase(opcao) == 's');
 		
-		System.out.println("Lista de usuários: " + pessoas);
+		for (Pessoa p : pessoas) {
+			System.out.println("Lista de usuários: " + p);
+		}
+		
 		sc.close();
 	}
 

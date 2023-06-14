@@ -4,16 +4,10 @@ public class Pessoa {
 	
 	private String nome;
 	private int idade;
-	private int telefone;
+	private String telefone;
 	
+	public Pessoa() {};
 	
-	public Pessoa(String nome, int idade, int telefone) {
-		super();
-		this.nome = nome;
-		this.idade = idade;
-		this.telefone = telefone;
-	}
-
 
 	public String getNome() {
 		return nome;
@@ -35,12 +29,12 @@ public class Pessoa {
 	}
 
 
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
