@@ -41,7 +41,7 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "\nPessoa [\nNome = " + nome + ", \nIdade=" + idade + ", \nTelefone=" + telefone + "]";
+		return "\nPessoa [\nNome = " + nome + ", \nIdade = " + idade + ", \nTelefone = " + telefone + "]";
 	}
 	
 	
