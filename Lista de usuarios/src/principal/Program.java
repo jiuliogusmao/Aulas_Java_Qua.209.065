@@ -17,16 +17,24 @@ public class Program {
 		List<Pessoa> pessoas = new ArrayList<>();
 		char opcao;
 		do {
-			pessoa = new Pessoa();
+			//pessoa = new Pessoa();
 			System.out.println("Cadastrar novo usuário");
-			System.out.println("Digite seu nome: ");
-			pessoa.setNome(sc.nextLine());
-			System.out.println("Digite sua idade: ");
-			pessoa.setIdade(sc.nextInt());
-			sc.nextLine(); //Limpa o buffer do Scanner
-			System.out.println("Digite seu telefone: ");
-			pessoa.setTelefone(sc.nextLine());
 			
+			System.out.println("Digite seu nome: ");
+			//pessoa.setNome(sc.nextLine());
+			String nome = sc.nextLine();
+			
+			System.out.println("Digite sua idade: ");
+			//pessoa.setIdade(sc.nextInt());
+			int idade = sc.nextInt();
+			
+			sc.nextLine(); //Limpa o buffer do Scanner
+			
+			System.out.println("Digite seu telefone: ");
+			//pessoa.setTelefone(sc.nextLine());
+			String telefone = sc.nextLine();
+			
+			pessoa = new Pessoa(nome, idade, telefone);
 			pessoas.add(pessoa);
 			
 			System.out.print("Deseja cadastar mais uma pessoa? ");
@@ -37,7 +45,8 @@ public class Program {
 		
 		System.out.println("Lista de usuários: ");
 		for (Pessoa p : pessoas) {
-			System.out.println(p + "\n");
+			System.out.println(
+					p + "\n");
 		}
 		
 		sc.close();

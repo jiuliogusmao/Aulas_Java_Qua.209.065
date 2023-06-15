@@ -8,6 +8,18 @@ public class Pessoa {
 	
 	public Pessoa() {};
 	
+	
+	
+
+	public Pessoa(String nome, int idade, String telefone) {
+		super();
+		this.nome = nome;
+		this.idade = idade;
+		this.telefone = telefone;
+	}
+
+
+
 
 	public String getNome() {
 		return nome;
