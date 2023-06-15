@@ -35,8 +35,9 @@ public class Program {
 			sc.nextLine(); //Limpa o buffer do Scanner
 		} while(Character.toLowerCase(opcao) == 's');
 		
+		System.out.println("Lista de usuários: ");
 		for (Pessoa p : pessoas) {
-			System.out.println("Lista de usuários: " + p + "\n");
+			System.out.println(p + "\n");
 		}
 		
 		sc.close();
