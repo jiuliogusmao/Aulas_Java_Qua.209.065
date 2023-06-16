@@ -1,14 +1,14 @@
 package entities;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Aluno {
-	
+
 	private String nome;
 	private int serie;
-	private double[] notas = new double[4];
-	
-	public Aluno(String nome, int serie, double[] notas) {
+	private ArrayList<Double> notas;
+
+	public Aluno(String nome, int serie, ArrayList<Double> notas) {
 		super();
 		this.nome = nome;
 		this.serie = serie;
@@ -31,20 +31,25 @@ public class Aluno {
 		this.serie = serie;
 	}
 
-	public double[] getNotas() {
+	public ArrayList<Double> getNotas() {
 		return notas;
 	}
 
-	public void setNotas(double[] notas) {
+	public void setNotas(ArrayList<Double> notas) {
 		this.notas = notas;
+	}
+
+	public Double calcularMedia() {
+		double soma = 0;
+		for (double nota : notas) {
+			soma += nota;
+		}
+		return soma / notas.size();
 	}
 
 	@Override
 	public String toString() {
-		return "Aluno [nome = " + nome + ", serie = " + serie + ", notas = " + Arrays.toString(notas) + "]";
+		return "Aluno [nome=" + nome + ", serie=" + serie + ", notas=" + notas + "]";
 	}
-	
-	
-	
-	
+
 }
