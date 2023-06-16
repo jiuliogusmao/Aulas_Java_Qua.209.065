@@ -9,5 +9,12 @@ public class ContaPoupanca extends Conta{
 		super(nomeTitular, numeroConta, agencia);
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public void sacar(double saque) {
+		// TODO Auto-generated method stub
+		saldo -= saque + 2;
+	}
+	
+	
 	
 }
