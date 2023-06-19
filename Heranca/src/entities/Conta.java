@@ -36,7 +36,7 @@ public class Conta {
 	}
 
 	public int getAgencia() {
-		return agencia;
+		return agencia; 
 	}
 
 	public void setAgencia(int agencia) {

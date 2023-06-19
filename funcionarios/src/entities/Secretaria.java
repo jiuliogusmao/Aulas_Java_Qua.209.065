@@ -11,10 +11,5 @@ public class Secretaria extends Funcionario{
 		super(nome, idade, genero, departamento, salario);
 		// TODO Auto-generated constructor stub
 	}
-
-	@Override
-	public double bonificacao(double salario) {
-		return salario += 150;
-	}
 	
 }
