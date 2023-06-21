@@ -53,7 +53,7 @@ public class Program {
 				secretaria.setNome(sc.nextLine());
 				
 				System.out.println("Digite a idade: ");
-				secretaria.setIdade(sc.nextInt());
+				secretaria.setIdade(sc.nextInt());    
 				sc.nextLine();
 				
 				System.out.println("Digite o gênero: ");
