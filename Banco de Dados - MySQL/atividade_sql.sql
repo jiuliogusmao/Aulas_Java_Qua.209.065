@@ -70,6 +70,10 @@ DESC produto;
 ALTER TABLE produto DROP COLUMN preço;
 
 ALTER TABLE produto ADD preco DOUBLE;
-ALTER TABLE produto RENAME COLUMN nome_do_produto TO nomes_dos_produtos;
 
+ALTER TABLE produto RENAME COLUMN nome_do_produto TO nomes_dos_produtos; 
+
+SELECT concat(nome, " tem ", idade, " anos") as informacao from pessoa;
+
+DELETE FROM pessoa WHERE nome LIKE "Analú%";
         
