@@ -100,8 +100,7 @@ CREATE TABLE produto(
 idProduto INTEGER PRIMARY KEY AUTO_INCREMENT,
 nome_produto VARCHAR(50),
 quantidade INT,
-valor DOUBLE,
-total_estoque DOUBLE
+valor DOUBLE
 );
 
 
