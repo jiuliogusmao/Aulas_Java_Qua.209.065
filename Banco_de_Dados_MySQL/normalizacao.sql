@@ -80,6 +80,29 @@ SELECT * FROM endereco INNER JOIN pessoa2 ON endereco.idEndereco = pessoa2.id_en
 
 SELECT nome, cpf, cep, bairro, cidade, uf FROM pessoa2 INNER JOIN endereco ON pessoa2.id_endereco = endereco.IdEndereco;
 
+CREATE TABLE telefone(
+idTelefone INTEGER PRIMARY KEY AUTO_INCREMENT,
+ddd VARCHAR(5),
+numero VARCHAR(10),
+id_pessoa INTEGER,
+CONSTRAINT fk_id_pessoa_pessoa2
+FOREIGN KEY(id_pessoa) REFERENCES pessoa2(idPessoa)
+);
+
+INSERT INTO telefone VALUES(NULL, "061", "91122-3344", 2),
+(NULL, "061", "91223-3445", 3), (NULL, "061", "92255-6677", 4);
+
+/* Para a tabela estar na terceira forma normal ela precisa estar de acordo com a 1ª e a 2ª forma normal
+não existir dependências transativas
+nenhum atributo não chave não pode depender de outro atributo não chave */
+
+CREATE TABLE produto(
+idProduto INTEGER PRIMARY KEY AUTO_INCREMENT,
+nome_produto VARCHAR(50),
+quantidade INT,
+valor DOUBLE,
+total_estoque DOUBLE
+);
 
 
 
