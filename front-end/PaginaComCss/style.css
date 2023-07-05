@@ -71,6 +71,19 @@ h2 {
     padding: 100px 0;
 }
 
-.colaboradores img {
+.colaboradores .cards img {
     width: 100px;
+}
+
+iframe {
+    margin: auto;
+    display: block;
+    width: 70%;
+}
+
+footer {
+    padding: 20px 0;
+    margin: 10px 0 5px 0;
+    background-color: #ccc;
+    text-align: center;
 }
