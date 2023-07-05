@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    width: 100%;
+}
+
+.nav-bar {
+    background-color: #111111;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    width: 100%;
+}
+
+.nav-bar .logo img {
+    width: 70px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.nav-bar .links_paginas ul {
+    display: flex;
+    text-align: center;
+    list-style-type: none;
+}
+
+.nav-bar ul li a {
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-bar ul li a:hover {
+    color: rgb(246, 250, 3);
+    font-size: 20px;
+    text-shadow: 1px 5px 10px rgb(190, 194, 129);
+
+}
