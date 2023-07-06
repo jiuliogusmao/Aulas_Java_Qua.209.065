@@ -4,6 +4,10 @@
 
 }
 
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
 .container {
     width: 100%;
 }
@@ -38,8 +42,48 @@
 }
 
 .nav-bar ul li a:hover {
-    color: rgb(246, 250, 3);
+    color: #ffbb00;
     font-size: 20px;
-    text-shadow: 1px 5px 10px rgb(190, 194, 129);
+    text-shadow: 1px 0.5px 20px #ffbb00;
 
+}
+
+.cursos {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.cursos h2 {
+    display: block;
+    width: 100%;
+}
+
+.curso {
+    padding: 20px;
+}
+
+.curso h1 p {
+    text-align: justify;
+}
+
+.curso .logo {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+     
+}
+
+.curso .logo img {
+    width: 190px;
+    padding: 20px;
+    border-radius: 30px;
+ 
+}
+
+footer {
+    padding: 20px 0;
+    margin: 10px 0 5px 0;
+    background-color: #ccc;
+    text-align: center;
 }
