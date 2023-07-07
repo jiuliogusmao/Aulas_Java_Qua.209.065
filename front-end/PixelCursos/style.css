@@ -8,9 +8,6 @@ body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.container {
-    width: 100%;
-}
 
 .nav-bar {
     background-color: #111111;
@@ -48,22 +45,32 @@ body {
 
 }
 
+.container-cursos {
+    width: 100%;
+
+}
+
+.container-cursos h1 {
+    margin: 20px;
+}
+
 .cursos {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
 }
 
-.cursos h2 {
-    display: block;
-    width: 100%;
-}
-
 .curso {
     padding: 20px;
+    text-align: center;
 }
 
-.curso h1 p {
+.curso h2 {
+    padding: 10px;
+}
+
+.curso p {
+    padding: 10px;
     text-align: justify;
 }
 
@@ -71,19 +78,57 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-     
+
 }
 
 .curso .logo img {
     width: 190px;
     padding: 20px;
     border-radius: 30px;
- 
 }
 
 footer {
-    padding: 20px 0;
-    margin: 10px 0 5px 0;
-    background-color: #ccc;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(5, 5, 5);
     text-align: center;
+    color: #ffbb00;
+}
+
+/* Página de contato */
+
+.mensagem {
+    background-color: #ffbb00;
+}
+
+.mensagem h1 {
+    padding: 50px 0 50px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.container-formulario {
+    position: relative;
+    left: 40%;
+    top: 50%;
+    width: 400px;
+    height: 500px;
+    background-color: #ffbb00;
+    border-radius: 10px;
+}
+
+.container-formulario .formulario {
+   margin-left: 25px;
+   margin-top: 25px;
+   padding-top: 25px;
+    
+}
+
+.container-formulario h3 {
+    margin-top: 10px;
+}
+
+.container-formulario .formulario button {
+    margin-right: -25px;
 }
