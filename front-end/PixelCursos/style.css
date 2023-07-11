@@ -8,7 +8,6 @@ body {
     font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-
 .nav-bar {
     background-color: #111111;
     display: flex;
@@ -47,6 +46,15 @@ body {
 
 .container-cursos {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.curso {
+    width: 250px;
+    padding: 20px;
+    text-align: center;
 
 }
 
@@ -54,19 +62,9 @@ body {
     margin: 20px;
 }
 
-.cursos {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.curso {
-    padding: 20px;
-    text-align: center;
-
-}
 
 .curso-descricao {
+    width: 100%;
     background-color: #ffbb00;
     border-radius: 10px;
 }
@@ -94,7 +92,7 @@ body {
 }
 
 footer {
-    margin-top: auto;
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: rgb(5, 5, 5);
@@ -115,9 +113,10 @@ footer {
 }
 
 .container-formulario {
-    position: relative;
-    left: 40%;
-    top: 50%;
+    margin: auto;
+    display: block;
+    margin-top: 100px;
+    margin-bottom: 100px;
     width: 400px;
     height: 500px;
     background-color: #ffbb00;
@@ -139,13 +138,15 @@ footer {
     margin-right: -25px;
 }
 
+/* Sobre nós*/
+
 .container-sobre {
     margin: auto;
     display: block;
     margin-top: 100px;
-    top: 50%;
+    margin-bottom: 100px;
     width: 50%;
-    height: 500px;
+    height: 100%;
     background-color: #ffbb00;
     border-radius: 10px;
 }
@@ -154,4 +155,15 @@ footer {
     padding: 30px 30px;
     text-align: justify;
     font-size: x-large;
+}
+
+/*responsividade*/
+
+@media screen and (max-width: 1024px) {
+    .cursos {
+        width: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
 }
