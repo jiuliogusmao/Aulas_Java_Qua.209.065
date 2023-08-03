@@ -20,17 +20,18 @@ form.addEventListener('submit', function(e){
          inserirResultado('Altura inválida', false)
          return
     }
+    
+    const imc = obterImc(peso, altura)
+    const classificaIMC = classificacaoImc(imc)
+    
+    const mensagemResultado = `Seu IMC é ${imc}, classificado como: ${classificaIMC}`
+    
+    inserirResultado(mensagemResultado, true)
 })
 
-const imc = obterImc(peso, altura)
-const classificaIMC = classificacaoImc(imc)
-
-const mensagemResultado = `Seu IMC é ${imc}, classificado como: ${classificaIMC}`
-
-inserirResultado(mensagemResultado, true)
 
 function classificacaoImc(imc){
-    const classficacao = ['Abaixo do peso', 'Peso normal', 'Sobrepeso', 'Obesidade grau I', 'Obesidade grau II', 'Obesidade grau III']
+    const classificacao = ['Abaixo do peso', 'Peso normal', 'Sobrepeso', 'Obesidade grau I', 'Obesidade grau II', 'Obesidade grau III']
 
     if (imc >= 40) return classificacao[5]
     if (imc >= 35) return classificacao[4]
