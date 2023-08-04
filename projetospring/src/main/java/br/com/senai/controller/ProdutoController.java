@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,6 +43,19 @@ public class ProdutoController {
 	public ResponseEntity<Produto> criarProduto(@RequestBody Produto produto) {
 		produtoRepository.save(produto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(produto);
+	}
+	
+	@PutMapping("/atualizarProduto")
+	public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody Produto produto){
+		return produtoRepository.findById(id)
+				.map(gravado -> {
+					gravado.setNome(produto.getNome());
+					gravado.setCategoria(produto.getCategoria());
+					gravado.setQuantidade(produto.getQuantidade());
+					gravado.setPreco(produto.getPreco());
+					Produto atualizado = produtoRepository.save(gravado);
+					return ResponseEntity.status(HttpStatus.OK).body(atualizado);
+				}).orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 	
 	@DeleteMapping("/excluirProduto")
