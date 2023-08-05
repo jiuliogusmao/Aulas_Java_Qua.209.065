@@ -1,6 +1,7 @@
 package br.com.senai.controller;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,8 +36,13 @@ public class ProdutoController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Produto> listarProdutoPorId(@PathVariable Long id){
-		Produto produto = produtoRepository.findById(id).get();
-		return ResponseEntity.status(HttpStatus.FOUND).body(produto);
+		try {
+			Produto produto = produtoRepository.findById(id).get();
+			return ResponseEntity.status(HttpStatus.FOUND).body(produto);
+			
+		} catch (NoSuchElementException e){
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+		}
 	}
 
 	@PostMapping("/criarProduto")
@@ -45,7 +51,7 @@ public class ProdutoController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(produto);
 	}
 	
-	@PutMapping("/atualizarProduto")
+	@PutMapping("/atualizarProduto/{id}")
 	public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody Produto produto){
 		return produtoRepository.findById(id)
 				.map(gravado -> {
@@ -58,9 +64,14 @@ public class ProdutoController {
 				}).orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 	
-	@DeleteMapping("/excluirProduto")
-	public void excluirProduto(@PathVariable Long id){
-		produtoRepository.deleteById(id);
+	@DeleteMapping("/excluirProduto/{id}")
+	public ResponseEntity<Void> excluirProduto(@PathVariable Long id){
+		return produtoRepository.findById(id)
+				.map(gravado -> {
+					produtoRepository.deleteById(id);
+					return ResponseEntity.status(HttpStatus.NO_CONTENT).<Void>build();
+				})
+				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 		
 	}
 }
