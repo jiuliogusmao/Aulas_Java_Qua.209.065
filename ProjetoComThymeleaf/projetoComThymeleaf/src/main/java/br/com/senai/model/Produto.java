@@ -4,19 +4,31 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Produto {
 	
+	@Id
+	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@NotNull(message = "Campo obrigatório")
+	@Size(min = 2, max = 254, message="Nome deve conter entre 2 e 254 caracteres")
 	private String nome;
+	
+	@Min(0)
 	private int quantidade;
+	
+	@Min(0)
 	private double preco;
-	private String descricao;
+	
+	private String descricaoProduto;
 	private String urlImagem;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long getId() {
 		return id;
 	}
@@ -41,11 +53,11 @@ public class Produto {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-	public String getDescricao() {
-		return descricao;
+	public String getDescricaoProduto() {
+		return descricaoProduto;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescricaoProduto(String descricaoProduto) {
+		this.descricaoProduto = descricaoProduto;
 	}
 	public String getUrlImagem() {
 		return urlImagem;
@@ -53,7 +65,4 @@ public class Produto {
 	public void setUrlImagem(String urlImagem) {
 		this.urlImagem = urlImagem;
 	}
-	
-	
-
 }
