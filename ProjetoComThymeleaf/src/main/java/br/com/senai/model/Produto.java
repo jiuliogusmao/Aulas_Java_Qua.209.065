@@ -25,8 +25,7 @@ public class Produto {
 	
 	@Min(0)
 	private double preco;
-	
-	private String descricaoProduto;
+	private String descricao;
 	private String urlImagem;
 	
 	public Long getId() {
@@ -53,16 +52,17 @@ public class Produto {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-	public String getDescricaoProduto() {
-		return descricaoProduto;
-	}
-	public void setDescricaoProduto(String descricaoProduto) {
-		this.descricaoProduto = descricaoProduto;
-	}
+	
 	public String getUrlImagem() {
 		return urlImagem;
 	}
 	public void setUrlImagem(String urlImagem) {
 		this.urlImagem = urlImagem;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 }

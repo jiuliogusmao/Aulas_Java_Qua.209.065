@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -72,8 +73,12 @@ public class ProdutoController {
 		return "redirect:/produto";
 	}
 	
-	
-	
+	@GetMapping("/excluir/{id}")
+	public String deletarProduto(@PathVariable("id") long id, Model model) {
+		Produto produto = produtoRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("Produto não encontrado." + id));
+		produtoRepository.delete(produto);
+		return "redirect:/produto";
+	}
 	
 
 }
